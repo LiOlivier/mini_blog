@@ -3,28 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .post {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <title>Projet - Mini Blog</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
-    <h1> Projet - Mini Blog </h1>
+    <h1 class = "titre">Projet - Mini Blog</h1>
 
-    {% for post in Posts %}
-        {
-            <div class = "post">
-                <h2 class > {{ post.title }} </h2>
-                <p> {{ post.content }} </p>
-                <p> Le : {{ post.created_at }} </p>
-            </diV>
-        }
+    {% for post in posts %}
+        <div class="post">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <p>Le : {{ post.created_at }}</p>
+        </div>
     {% empty %}
-        <p> Aucun article disponible. </p>
-    {%endfor %}
+        <p>Aucun article disponible.</p>
+    {% endfor %}
 </body>
 </html>
