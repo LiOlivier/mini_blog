@@ -1,13 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ posts.title }}</title>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
-    <h1>{{ posts.title }}</h1>
-    <p>{{ posts.content }}</p>
-    <p>Publié le : {{ post.created_at }}</p>
+    <h1 class="main-title">{{ post.title }}</h1>
+
+    <div class="post-content">
+        <p>{{ post.content }}</p>
+        <p class="post-date">Publié le {{ post.created_at|date:"d/m/Y H:i" }}</p>
+    </div>
+
+    <a href="/" class="back-link">← Retour à l’accueil</a>
 </body>
 </html>

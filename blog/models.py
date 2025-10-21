@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     title = models.CharField(max_length=200) #Titre du post
-    content = models.TextField #Contenue du post
+    content = models.TextField() #Contenue du post
     created_at = models.DateTimeField(default=timezone.now) #Quand le post à été publier 
 
     def __str__(self):
