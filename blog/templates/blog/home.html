@@ -12,8 +12,8 @@
 
     {% for post in posts %}
         <div class="post">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.content }}</p>
+            <h2 class = "titre">{{ post.title }}</h2>
+            <p class = "contenu">{{ post.content }}</p>
             <p>Le : {{ post.created_at }}</p>
         </div>
     {% empty %}
