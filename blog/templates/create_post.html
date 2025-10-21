@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un article</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <h1>Créer un nouvel article</h1>
+
+    <form method="POST">
+        {% csrf_token %} <!-- protection contre les attaques CSRF --> 
+        {{ form.as_p }} <!-- rend le formulaire en paragraphes -->
+        <button type="submit">Publier</button>
+    </form>
+
+    <a href="/">← Retour à l’accueil</a>
+</body>
+</html>

@@ -2,6 +2,11 @@
     font-weight: bold;
 }
 
+.p {
+    border: solid 10px;
+    border-radius: 25px;
+}
+
 .contenu {
     font-size: 16px;
     line-height: 1.5;
