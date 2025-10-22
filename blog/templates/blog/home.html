@@ -10,13 +10,16 @@
 <body>
     <h1 class = "titre">Projet - Mini Blog</h1>
 
-    {% for post in posts %}
+    <input type ="button" value="Créer un nouvel article" onclick="window.location.href='{% url 'create_form' %}'" />
+    {% for post in posts %} <!-- boucle sur les posts comme for i in post.length-->
+
         <div class="post">
             <h2 class = "titre">{{ post.title }}</h2>
             <p class = "contenu">{{ post.content }}</p>
             <p>Le : {{ post.created_at }}</p>
         </div>
-    {% empty %}
+
+    {% empty %} <!-- si vide alors no article-->
         <p>Aucun article disponible.</p>
     {% endfor %}
 </body>
