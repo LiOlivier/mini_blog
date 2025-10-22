@@ -14,12 +14,12 @@ def post_detail(request, post_id): # détail + id du post
     post = Post.objects.get(id=post_id) # identification du post <=> id 
     return render(request, 'blog/post_detail.html', {'post': post}) # post detail -> template -> context
 
-def create_form(request, form_id):
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home') 
+def create_form(request):
+    if request.method == 'POST': # form soumis 
+        form = PostForm(request.POST) # données du form récupérées
+        if form.is_valid(): 
+            form.save() 
+            return redirect('home') # redirection vers la page d'accueil après sauvegarde
     else:
-        form = PostForm()
-    return render(request, 'blog/create_form.html', {'form': form})
+        form = PostForm() # soumission vide 
+    return render(request, 'blog/create_form.html', {'form': form}) # form vide -> template -> context
