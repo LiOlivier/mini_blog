@@ -1,6 +1,6 @@
 .titre {
     font-weight: bold;
-    justify-content: center;
+    text-align: center;
 }
 
 .post {
@@ -9,7 +9,22 @@
     margin-bottom: 20px;
     border-radius: 5px;
     background-color: #f9f9f9;
+}
 
+.add_a {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #218ec0;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.add_a:hover {
+    background-color: rgb(31, 136, 168);
+    transition: background-color 0.4s;
 }
 
 .contenu {
@@ -35,6 +50,20 @@
     font-size: 18px;
 }
 
+.container {
+    max-width: 900px; 
+    margin: 0 auto;   
+    padding: 0 16px;  
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
 .post-date {
     color: gray;
     font-size: 14px;
@@ -51,4 +80,52 @@
 
 .back-link:hover {
     color: #971414;
+}
+
+.container form {
+    max-width: 700px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.container form input[type="text"],
+.container form input[type="email"],
+.container form input[type="password"],
+.container form textarea,
+.container form select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.container form button {
+    display: block;
+    margin: 12px auto;
+    padding: 10px 18px;
+    background-color: #218ec0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.container form button:hover {
+    background-color: rgb(31, 136, 168);
+}
+
+.add_a {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 15px;
+    background-color: #218ec0;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    text-align: center;
+    width: fit-content;
 }

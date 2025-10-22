@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
-    <h1 class="main-title">{{ post.title }}</h1>
+    <div class="container">
+        <h1 class="main-title">{{ post.title }}</h1>
 
-    <div class="post-content">
-        <p>{{ post.content }}</p>
-        <p class="post-date">Publié le {{ post.created_at|date:"d/m/Y H:i" }}</p> <!-- formatage de la date -->
+        <div class="post-content">
+            <p>{{ post.content }}</p>
+            <p class="post-date">Publié le {{ post.created_at|date:"d/m/Y H:i" }}</p> <!-- formatage de la date -->
+        </div>
+
+        <a href="/" class="back-link">← Retour à l’accueil</a>
     </div>
-
-    <a href="/" class="back-link">← Retour à l’accueil</a>
 </body>
 </html>

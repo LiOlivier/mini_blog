@@ -8,19 +8,22 @@
     <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
-    <h1 class = "titre">Projet - Mini Blog</h1>
+    <div class="container">
+        <h1 class = "titre">Projet - Mini Blog</h1>
 
-    <input type ="button" value="Créer un nouvel article" onclick="window.location.href='{% url 'create_form' %}'" />
-    {% for post in posts %} <!-- boucle sur les posts comme for i in post.length-->
+    <a href="{% url 'create_form' %}" class="add_a">Créer un nouvel article</a>
 
-        <div class="post">
-            <h2 class = "titre">{{ post.title }}</h2>
-            <p class = "contenu">{{ post.content }}</p>
-            <p>Le : {{ post.created_at }}</p>
-        </div>
+        {% for post in posts %} <!-- boucle sur les posts comme for i in post.length-->
 
-    {% empty %} <!-- si vide alors no article-->
-        <p>Aucun article disponible.</p>
-    {% endfor %}
+            <div class="post">
+                <h2 class = "titre">{{ post.title }}</h2>
+                <p class = "contenu">{{ post.content }}</p>
+                <p>Le : {{ post.created_at }}</p>
+            </div>
+
+        {% empty %} <!-- si vide alors no article-->
+            <p>Aucun article disponible.</p>
+        {% endfor %}
+    </div>
 </body>
 </html>
