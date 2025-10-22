@@ -1,23 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
-<body>
-    <form method="post">
-        {% csrf_token %}
-        <div>
-            <label for="username">Nom d'utilisateur :</label>
+<body class="login-page">
+    <div class="login-card">
+        <h1>Sign in to MiniBlog</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username or email address</label>
             <input type="text" id="username" name="username" required>
-        </div>
-        <div>
-            <label for="password">Mot de passe :</label>
+
+            <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Se connecter</button>
-    </form>
+
+            <button type="submit">Sign in</button>
+        </form>
+        <div class="secondary">New to MiniBlog? Create an account</div>
+    </div>
 </body>
-</html>
 </html>
