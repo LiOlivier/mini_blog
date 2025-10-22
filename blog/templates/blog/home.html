@@ -1,27 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet - Mini Blog</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Accueil</a></li>
+            <li><a href="{% url 'create_form' %}">Nouvel article</a></li>
+            <!-- {% if user.is_authenticated %} -->
+                <!-- <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Connexion</a></li>
+            {% endif %} -->
+        </ul>
+    </nav>
+
     <div class="container">
-        <h1 class = "titre">Projet - Mini Blog</h1>
+        
+        <a href="{% url 'create_form' %}" class="add_a">Créer un nouvel article</a>
 
-    <a href="{% url 'create_form' %}" class="add_a">Créer un nouvel article</a>
-
-        {% for post in posts %} <!-- boucle sur les posts comme for i in post.length-->
-
+        {% for post in posts %}
             <div class="post">
-                <h2 class = "titre">{{ post.title }}</h2>
-                <p class = "contenu">{{ post.content }}</p>
+                <h2 class="titre">{{ post.title }}</h2>
+                <p class="contenu">{{ post.content }}</p>
                 <p>Le : {{ post.created_at }}</p>
             </div>
-
-        {% empty %} <!-- si vide alors no article-->
+        {% empty %}
             <p>Aucun article disponible.</p>
         {% endfor %}
     </div>
