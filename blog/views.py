@@ -23,3 +23,6 @@ def create_form(request):
     else:
         form = PostForm() # soumission vide 
     return render(request, 'blog/create_form.html', {'form': form}) # form vide -> template -> context
+
+def login_view(request):
+    return render(request, 'blog/login.html')
