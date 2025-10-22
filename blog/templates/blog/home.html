@@ -8,20 +8,23 @@
     <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Accueil</a></li>
-            <li><a href="{% url 'create_form' %}">Nouvel article</a></li>
-            <!-- {% if user.is_authenticated %} -->
-                <!-- <li><a href="{% url 'logout' %}">Déconnexion</a></li>
-            {% else %}
-                <li><a href="{% url 'login' %}">Connexion</a></li>
-            {% endif %} -->
-        </ul>
-    </nav>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="site-logo" href="{% url 'home' %}">
+                <img src="{% static 'blog/images/TenexaBlog.png' %}" alt="TenexaBlog logo">
+            </a>
+            <nav class="site-nav" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="{% url 'home' %}">Accueil</a></li>
+                    <li><a href="{% url 'create_form' %}">Nouvel article</a></li>
+                    <li><a href="{% url 'login' %}">Connexion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <div class="container">
-        
+
         <a href="{% url 'create_form' %}" class="add_a">Créer un nouvel article</a>
 
         {% for post in posts %}

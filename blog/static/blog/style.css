@@ -146,3 +146,46 @@ body {
   margin-top: 24px;
   color: #999999;
 }
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+}
+
+.site-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-logo img {
+  height: 42px;
+  display: block;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 8px 10px;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: var(--muted);
+}
