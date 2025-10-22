@@ -89,7 +89,7 @@ body {
     flex-direction: column;
     gap: 12px;
 }
-
+/* Form fields: layout, sizing and transitions */
 .container form input[type="text"],
 .container form input[type="email"],
 .container form input[type="password"],
@@ -101,6 +101,22 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 14px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.container form input[type="text"]:hover,
+.container form input[type="email"]:hover,
+.container form input[type="password"]:hover,
+.container form textarea:hover,
+.container form select:hover,
+.container form input[type="text"]:focus,
+.container form input[type="email"]:focus,
+.container form input[type="password"]:focus,
+.container form textarea:focus,
+.container form select:focus {
+    border-color: #218ec0;
+    box-shadow: 0 0 0 4px rgba(33,142,192,0.12);
+    outline: none;
 }
 
 .container form button {
@@ -116,6 +132,12 @@ body {
 
 .container form button:hover {
     background-color: rgb(31, 136, 168);
+}
+
+.container > h1,
+.container .main-title {
+    text-align: center;
+    margin-bottom: 18px;
 }
 
 .add_a {
