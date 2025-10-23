@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Connexion - TenexaBlog</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body class="login-page">
+    <div class="login-card">
+        <h1>Connexion à TenexaBlog</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.username.label_tag }}
+            {{ form.username }}
+
+            {{ form.password.label_tag }}
+            {{ form.password }}
+
+            <button type="submit">Se connecter</button>
+        </form>
+        <div class="secondary">Pas encore de compte? <a href="{% url 'register' %}">Inscrivez-vous</a></div>
+    </div>
+</body>
+</html>
