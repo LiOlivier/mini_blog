@@ -26,3 +26,6 @@ def create_form(request):
 
 def login_view(request):
     return render(request, 'blog/login.html')
+
+def register_view(request):
+    return render(request, 'blog/register.html')
