@@ -152,8 +152,6 @@ body {
   border-bottom: 1px solid var(--line);
   margin-bottom: 18px;
   height: 72px;
-  display: flex;
-  align-items: center;
 }
 
 .site-header-inner {
@@ -161,10 +159,18 @@ body {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center; /* center the nav */
+  justify-content: center; 
   gap: 12px;
-  padding: 8px 0;
-  position: relative; /* allow absolute positioning of logo/profile */
+  padding: 8px 140px;
+  position: relative; 
+}
+
+.site-nav li:focus-within a.hover{
+  background: var(--muted);
+}
+
+.site-nav li:hover a {
+  background: rgba(255, 255, 255, 0.966);
 }
 
 .site-header {
@@ -181,7 +187,7 @@ body {
 .site-logo {
   order: 0;
   position: absolute;
-  left: 24px;
+    left: 13.5%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
@@ -192,7 +198,7 @@ body {
 }
 
 .site-logo img {
-  height: 64px;
+  height: 50px;
   display: block;
 }
 
@@ -214,6 +220,7 @@ body {
   text-decoration: none;
   border-radius: 6px;
   line-height: normal;
+  transition: background-color .18s ease, color .18s ease, box-shadow .18s ease, transform .1s ease;
 }
 
 .site-nav a:hover,
@@ -221,18 +228,46 @@ body {
   background: var(--muted);
 }
 
+.site-nav li:hover a,
+.site-nav li:focus-within a,
+.site-nav a:hover,
+.site-nav a:focus {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(144, 162, 66, 0.25);
+}
+
+.site-nav a:active { transform: translateY(1px); }
+
 .user-icon {
   height: 20px;
   width: 20px;
-  display: inline-block;
   vertical-align: middle;
   filter: none;
+  position: static;
+  margin-left: 12px;
+}
+
+.user-link {
   position: absolute;
-  right: 24px;
+  right: 15%;
   top: 50%;
   transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   z-index: 2;
+  transition: background-color .18s ease, box-shadow .18s ease, transform .1s ease;
 }
+.user-link:hover { 
+  background: var(--accent);
+  box-shadow: 0 6px 16px rgba(144, 162, 66, 0.25);
+}
+.user-link:active { transform: translateY(0); }
+.user-link:hover .user-icon { filter: invert(1) brightness(1.1); }
 
 .login-page {
   min-height: 100vh;
@@ -323,16 +358,8 @@ body {
     position: static;
     transform: none;
   }
-  .site-nav {
-    position: static;
-    margin: 0 12px;
-  }
-  .user-icon {
-    position: static;
-    transform: none;
-    display: inline-block;
-    margin-left: 12px;
-  }
+  .site-nav { position: static; margin: 0 12px; }
+  .user-link { position: static; transform: none; margin-left: auto; }
   .site-logo img { height: 48px }
   .site-nav ul { gap: 8px }
 }

@@ -16,9 +16,11 @@
             <nav class="site-nav" aria-label="Navigation principale">
                 <ul>
                     <li><a href="{% url 'create_form' %}">Nouvel article</a></li>
-                    <li><a href="{% url 'login' %}"><img src="{% static 'blog/images/utilisateur.png' %}" alt="Connexion" class="user-icon"></a></li>
                 </ul>
             </nav>
+            <a class="user-link" href="{% url 'login' %}" aria-label="Connexion">
+                <img src="{% static 'blog/images/utilisateur.png' %}" alt="" class="user-icon">
+            </a>
         </div>
     </header>
 
