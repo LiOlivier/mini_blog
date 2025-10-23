@@ -3,6 +3,8 @@ from .models import Post
 from django.http import Http404
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login as auth_login
 
 #(contexte pluriel)
 def home(request): #request = instance httpRequest
@@ -25,7 +27,15 @@ def create_form(request):
     return render(request, 'blog/create_form.html', {'form': form}) # form vide -> template -> context
 
 def login_view(request):
-    return render(request, 'blog/login.html')
+    return render(request, 'registration/login.html')
 
 def register_view(request):
-    return render(request, 'blog/register.html')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            auth_login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+    return render(request, 'blog/register.html', {'form': form})
