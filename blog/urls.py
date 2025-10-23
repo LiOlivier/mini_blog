@@ -8,5 +8,4 @@ urlpatterns = [
     path('post/<int:post_id>/', views.post_detail, name='post_detail'),
     path('create/', views.create_form, name='create_form'),
     path('register/', views.register_view, name='register'),
-    # use Django's built-in auth views for login/logout (template at templates/registration/login.html)
 ]

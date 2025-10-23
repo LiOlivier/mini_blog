@@ -13,6 +13,7 @@
         <form method="POST">
             {% csrf_token %} <!-- protection contre les attaques CSRF --> 
             {{ form.as_p }} <!-- rend le formulaire en paragraphes -->
+            <button type="submit">Publier</button>
         </form>
 
         <a href="/" class="back-link">← Retour à l’accueil</a>
