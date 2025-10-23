@@ -151,7 +151,9 @@ body {
 .site-header {
   border-bottom: 1px solid var(--line);
   margin-bottom: 18px;
-  padding-bottom: 12px;
+  height: 72px;
+  display: flex;
+  align-items: center;
 }
 
 .site-header-inner {
@@ -161,10 +163,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  height: 100%;
 }
 
 .site-logo img {
-  height: 42px;
+  height: 64px;
   display: block;
 }
 
@@ -176,14 +179,16 @@ body {
   gap: 20px;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .site-nav a {
   display: inline-block;
-  padding: 8px 10px;
+  padding: 0 10px;
   color: var(--ink);
   text-decoration: none;
   border-radius: 6px;
+  line-height: 72px;
 }
 
 .site-nav a:hover,
