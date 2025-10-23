@@ -220,6 +220,7 @@ body {
   text-decoration: none;
   border-radius: 6px;
   line-height: normal;
+  font-weight: 600; 
   transition: background-color .18s ease, color .18s ease, box-shadow .18s ease, transform .1s ease;
 }
 
@@ -242,10 +243,10 @@ body {
 .user-icon {
   height: 20px;
   width: 20px;
-  vertical-align: middle;
   filter: none;
   position: static;
-  margin-left: 12px;
+  margin-left: 0;
+  display: block;
 }
 
 .user-link {
@@ -266,7 +267,7 @@ body {
   background: var(--accent);
   box-shadow: 0 6px 16px rgba(144, 162, 66, 0.25);
 }
-.user-link:active { transform: translateY(0); }
+.user-link:active { box-shadow: 0 3px 10px rgba(144, 162, 66, 0.22); }
 .user-link:hover .user-icon { filter: invert(1) brightness(1.1); }
 
 .login-page {
