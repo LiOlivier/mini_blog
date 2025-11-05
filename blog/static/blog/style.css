@@ -131,15 +131,19 @@ body {
   display: block;
   margin: 12px auto;
   padding: 10px 16px;
-  background: #ffffff;
-  border: 1px solid var(--line);
+  background: var(--accent);
+  border: none;
   border-radius: 6px;
-  color: var(--ink);
+  color: #ffffff;
   cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(144, 162, 66, 0.18);
+  transition: background-color .18s ease, box-shadow .18s ease, transform .1s ease;
 }
 
 .container form button:hover {
-  background: #fafafa;
+  background: #7a8e36;
+  box-shadow: 0 8px 20px rgba(144, 162, 66, 0.22);
 }
 
 .footer {
@@ -363,4 +367,84 @@ body {
   .user-link { position: static; transform: none; margin-left: auto; }
   .site-logo img { height: 48px }
   .site-nav ul { gap: 8px }
+}
+
+:root {
+  --bg: #ffffff;
+  --accent: #90a242;
+  --muted: #f5f5f5;
+  --line: #e6e6e6;
+  --ink: #222222;
+  --muted-text: #777777;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.container form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.container form input[type="text"],
+.container form input[type="email"],
+.container form input[type="password"],
+.container form textarea,
+.container form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+  background: #ffffff;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.container form input[type="text"]:hover,
+.container form textarea:hover,
+.container form input[type="text"]:focus,
+.container form textarea:focus,
+.container form input[type="email"]:focus,
+.container form select:focus {
+  border-color: #dcdcdc;
+  box-shadow: 0 8px 18px rgba(15, 15, 15, 0.03);
+  outline: none;
+}
+
+.container form button {
+  display: block;
+  margin: 12px auto;
+  padding: 10px 16px;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(144, 162, 66, 0.18);
+  transition: background-color .18s ease, box-shadow .18s ease, transform .1s ease;
+}
+
+.container form button:hover {
+  background: #c7e73a;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 22px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #9b9090;
+  transition: 200ms;
 }

@@ -1,0 +1,24 @@
+FROM python:3.12-slim
+
+# là on setup des variables d’environnement pour Python
+ENV PYTHONDONTWRITEBYTECODE=1 \
+	PYTHONUNBUFFERED=1
+
+# Workdir permet de définir le répertoire de travail
+WORKDIR /app
+
+# Installation des dépendances nécessaires
+RUN pip install --no-cache-dir "Django>=4.2,<6" gunicorn psycopg2-binary django-prometheus
+
+# Ici on copie le code de l’application
+COPY . /app
+
+# Et la on copie le script d’entrée et on le rend exécutable 
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+# sur le port 8000
+EXPOSE 8000
+
+# commande exécutée au démarrage du conteneur
+CMD ["/app/entrypoint.sh"]
